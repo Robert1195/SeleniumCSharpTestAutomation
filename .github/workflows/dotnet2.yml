@@ -17,13 +17,6 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
-    - uses: isbang/compose-action@v1.4.1
-      with:
-        compose-file: "${{ github.workspace }}/docker-compose.yml"
-        down-flags: "--volumes"
-        services: |
-          ea_api
-          ea_webapp
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
